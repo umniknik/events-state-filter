@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px 4px;
+  /* высота контейнера фиксированная */
+  /* должна быть больше любой из колонок */
+  height: 2600px;
+  width: 63%;
+  margin: auto;
+}
+
+.project-card {
+  width: calc(100% / 3);
+}
+
+.project-card:nth-child(3n + 1) { order: 1; }
+.project-card:nth-child(3n + 2) { order: 2; }
+.project-card:nth-child(3n)   { order: 3; }
+
+.project-list::before,
+.project-list::after {
+  content: "";
+  flex-basis: 100%;
+  width: 0;
+  order: 2;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  align-self: stretch;
+}
+
+.project-category {
+  text-align: center;
+  padding: 5px;
+  background-color: #f5f5f5;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.toolbar button {
+  background-color: #f1f1f1;
+  border: none;
+  color: #333;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.active {
+  background-color: rgb(51, 51, 51);
+}
+
+.toolbar button.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.toolbar button:hover {
+  background-color: #ddd;
+}
